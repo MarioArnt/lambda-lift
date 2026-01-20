@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+lib/
+dist/
+*.tsbuildinfo
+
+# Python
+python/build/
+python/dist/
+python/*.egg-info/
+
+# Go
+go/lambda-lift
+go/lambda-lift.exe
+
+# Package files
+*.zip
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Other
+.package/
+pnpm-lock.yaml
+package-lock.json
