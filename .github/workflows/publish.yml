@@ -33,7 +33,7 @@ jobs:
         run: pnpm test
 
       - name: Security Audit
-        run: pnpm audit
+        run: pnpm audit --audit-level high
 
   build-binaries:
     name: Build binaries

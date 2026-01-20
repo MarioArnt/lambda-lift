@@ -39,4 +39,4 @@ jobs:
         run: pnpm test:coverage
 
       - name: Security Audit
-        run: pnpm audit
+        run: pnpm audit --audit-level high
