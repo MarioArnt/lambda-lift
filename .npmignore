@@ -1,0 +1,12 @@
+.github
+**/*.ts
+**/*.spec.ts
+.husky
+.eslintrc.json
+.prettierignore
+.prettierrc
+go
+python
+sonar-project.properties
+jest.config.js
+PUBLISHING.md

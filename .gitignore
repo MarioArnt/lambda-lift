@@ -43,3 +43,9 @@ pnpm-debug.log*
 # Temporary files
 *.tmp
 .cache/
+
+# Unit tests
+coverage/
+
+# Built TS
+lib/
