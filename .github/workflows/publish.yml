@@ -85,6 +85,9 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     needs: build-binaries
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -118,9 +121,7 @@ jobs:
         run: pnpm run build
 
       - name: Publish to npm
-        run: pnpm publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm publish --no-git-checks --provenance
 
   publish-pypi:
     name: Publish to PyPI
@@ -141,13 +142,21 @@ jobs:
           python -m pip install --upgrade pip
           pip install build twine
 
+      - name: Copy README
+        run: cp ../README.md .
+        working-directory: python
+
       - name: Extract version from tag
         id: get_version
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
       - name: Update Python package version
         working-directory: python
-        run: |
+        run: |Copy README
+        working-directory: python
+        run: cp ../README.md .
+
+      - name: 
           sed -i "s/version=\"[^\"]*\"/version=\"${{ steps.get_version.outputs.VERSION }}\"/" setup.py
           sed -i "s/__version__ = \"[^\"]*\"/__version__ = \"${{ steps.get_version.outputs.VERSION }}\"/" lambda_lift/__init__.py
 
