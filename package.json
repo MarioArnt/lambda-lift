@@ -1,12 +1,12 @@
 {
   "name": "lambda-lift",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A utility to streamline AWS Lambda function deployments",
   "packageManager": "pnpm@10.28.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marnautoupages/lambda-lift.git"
+    "url": "https://github.com/MarioArnt/lambda-lift.git"
   },
   "keywords": [
     "aws",
