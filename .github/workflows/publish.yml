@@ -85,6 +85,9 @@ jobs:
     environment: production
     runs-on: ubuntu-latest
     needs: build-binaries
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -118,9 +121,7 @@ jobs:
         run: pnpm run build
 
       - name: Publish to npm
-        run: pnpm publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm publish --no-git-checks --provenance
 
   publish-pypi:
     name: Publish to PyPI
@@ -150,7 +151,9 @@ jobs:
         run: |
           sed -i "s/version=\"[^\"]*\"/version=\"${{ steps.get_version.outputs.VERSION }}\"/" setup.py
           sed -i "s/__version__ = \"[^\"]*\"/__version__ = \"${{ steps.get_version.outputs.VERSION }}\"/" lambda_lift/__init__.py
-
+      - name: Copy README
+        run: cp ../README.md .
+        working-directory: python
       - name: Build Python package
         working-directory: python
         run: python -m build

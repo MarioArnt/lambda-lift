@@ -3,10 +3,10 @@ requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "lambda-lift"
+name = "py-lambda-lift"
 dynamic = ["version"]
 description = "A utility to streamline AWS Lambda function deployments"
-readme = "../README.md"
+readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
