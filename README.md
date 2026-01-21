@@ -1,5 +1,10 @@
 # LambdaLift
 
+[![npm version](https://badge.fury.io/js/lambda-lift.svg)](https://www.npmjs.com/package/lambda-lift)
+[![Publish](https://github.com/MarioArnt/lambda-lift/actions/workflows/publish.yml/badge.svg)](https://github.com/MarioArnt/lambda-lift/actions/workflows/publish.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=MarioArnt_lambda-lift&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=MarioArnt_lambda-lift)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=MarioArnt_lambda-lift&metric=coverage)](https://sonarcloud.io/summary/new_code?id=MarioArnt_lambda-lift)
+
 LambdaLift is a utility designed to streamline the process of updating code for AWS Lambda functions.
 
 It automates the entire deployment workflow: creating the zip archive, uploading the new version to S3, publishing a new Lambda version, and updating the function configuration.
